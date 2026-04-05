@@ -5,9 +5,10 @@ db = SQLAlchemy()
 
 class User(db.Model):
     __tablename__ = "users"
+    id = db.Column(db.Integer, primary_key=True)
     last_name = db.Column(db.String(80), unique=True, nullable=False)
     last_four_digits = db.Column(db.String(4), unique=False, nullable=False)
-    image_str = db.Column(db.String(200), unique=False, nullable=False)
+    image_str = db.Column(db.Text, unique=False, nullable=False)
     # image_vector = db.Column(db.PickleType, unique=False, nullable=False)
     
 
